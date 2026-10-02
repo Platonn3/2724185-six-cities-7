@@ -1,0 +1,103 @@
+{
+  "data": {
+    "titles": [
+      "Квартира рядом с Эйфелевой башней",
+      "Светлая студия в центре Кёльна",
+      "Уютный дом в старом Брюсселе",
+      "Лофт с видом на каналы Амстердама",
+      "Просторные апартаменты в Гамбурге",
+      "Тихая комната в центре Дюссельдорфа"
+    ],
+    "descriptions": [
+      "Светлая квартира с просторной гостиной, оборудованной кухней и красивым видом на город.",
+      "Современная студия рядом с главными достопримечательностями, кафе и остановками транспорта.",
+      "Уютный дом в тихом районе с собственным садом и удобным местом для семейного отдыха.",
+      "Стильный лофт с большими окнами, рабочей зоной и панорамным видом на исторический центр.",
+      "Просторные апартаменты с несколькими спальнями, новой мебелью и всей необходимой техникой.",
+      "Комфортная комната для короткой поездки с удобной кроватью, рабочим столом и быстрым интернетом."
+    ],
+    "cities": [
+      "Paris",
+      "Cologne",
+      "Brussels",
+      "Amsterdam",
+      "Hamburg",
+      "Dusseldorf"
+    ],
+    "previewImages": [
+      "https://example.com/images/paris-preview.jpg",
+      "https://example.com/images/cologne-preview.jpg",
+      "https://example.com/images/brussels-preview.jpg",
+      "https://example.com/images/amsterdam-preview.jpg",
+      "https://example.com/images/hamburg-preview.jpg",
+      "https://example.com/images/dusseldorf-preview.jpg"
+    ],
+    "images": [
+      "https://example.com/images/property-01.jpg",
+      "https://example.com/images/property-02.jpg",
+      "https://example.com/images/property-03.jpg",
+      "https://example.com/images/property-04.jpg",
+      "https://example.com/images/property-05.jpg",
+      "https://example.com/images/property-06.jpg",
+      "https://example.com/images/property-07.jpg",
+      "https://example.com/images/property-08.jpg",
+      "https://example.com/images/property-09.jpg",
+      "https://example.com/images/property-10.jpg",
+      "https://example.com/images/property-11.jpg",
+      "https://example.com/images/property-12.jpg"
+    ],
+    "amenities": [
+      "Breakfast",
+      "Air conditioning",
+      "Laptop friendly workspace",
+      "Baby seat",
+      "Washer",
+      "Towels",
+      "Fridge"
+    ],
+    "users": [
+      {
+        "name": "Алиса",
+        "email": "alice@example.com",
+        "avatarPath": "https://example.com/avatars/alice.jpg",
+        "password": "secret1",
+        "type": "pro"
+      },
+      {
+        "name": "Борис",
+        "email": "boris@example.com",
+        "avatarPath": "https://example.com/avatars/boris.png",
+        "password": "secret2",
+        "type": "regular"
+      },
+      {
+        "name": "Виктор",
+        "email": "viktor@example.com",
+        "avatarPath": "https://example.com/avatars/viktor.jpg",
+        "password": "secret3",
+        "type": "regular"
+      },
+      {
+        "name": "Галина",
+        "email": "galina@example.com",
+        "avatarPath": "https://example.com/avatars/galina.png",
+        "password": "secret4",
+        "type": "pro"
+      },
+      {
+        "name": "Денис",
+        "email": "denis@example.com",
+        "avatarPath": "https://example.com/avatars/denis.jpg",
+        "password": "secret5",
+        "type": "regular"
+      },
+      {
+        "name": "Елена",
+        "email": "elena@example.com",
+        "avatarPath": "https://example.com/avatars/elena.png",
+        "password": "secret6",
+        "type": "pro"
+      }
+    ]
+  }
+}

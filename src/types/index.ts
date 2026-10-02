@@ -5,3 +5,4 @@ export type {HousingType} from './housing-type.type.js';
 export type {Location} from './location.type.js';
 export type {Offer} from './offer.type.js';
 export type {User, UserType} from './user.type.js';
+export type {MockServerData} from './mock-server-data.type.js';

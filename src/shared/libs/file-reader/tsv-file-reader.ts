@@ -1,32 +1,15 @@
-import {readFile} from 'node:fs/promises';
+import {createReadStream} from 'node:fs';
+import {createInterface} from 'node:readline';
 import type {
   Amenity,
-  City,
-  CityName,
   HousingType,
   Offer,
   User,
   UserType,
 } from '../../../types/index.js';
-
-const CITY_LOCATIONS: Record<CityName, City['location']> = {
-  Paris: {latitude: 48.85661, longitude: 2.351499},
-  Cologne: {latitude: 50.938361, longitude: 6.959974},
-  Brussels: {latitude: 50.846557, longitude: 4.351697},
-  Amsterdam: {latitude: 52.370216, longitude: 4.895168},
-  Hamburg: {latitude: 53.550341, longitude: 10.000654},
-  Dusseldorf: {latitude: 51.225402, longitude: 6.776314},
-};
+import {CITY_LOCATIONS, CITY_NAMES} from '../../constants/cities.js';
 
 const TSV_FIELD_COUNT = 21;
-const CITY_NAMES: readonly CityName[] = [
-  'Paris',
-  'Cologne',
-  'Brussels',
-  'Amsterdam',
-  'Hamburg',
-  'Dusseldorf',
-];
 const HOUSING_TYPES: readonly HousingType[] = ['apartment', 'house', 'room', 'hotel'];
 const USER_TYPES: readonly UserType[] = ['regular', 'pro'];
 const AMENITIES: readonly Amenity[] = [
@@ -157,12 +140,23 @@ function parseOffer(line: string, lineNumber: number): Offer {
 export class TsvFileReader {
   constructor(private readonly filepath: string) {}
 
-  public async read(): Promise<Offer[]> {
-    const content = await readFile(this.filepath, {encoding: 'utf-8'});
+  public async read(): Promise<number> {
+    const stream = createReadStream(this.filepath, {encoding: 'utf-8'});
+    const lines = createInterface({input: stream, crlfDelay: Infinity});
+    let importedCount = 0;
+    let lineNumber = 0;
 
-    return content
-      .split(/\r?\n/u)
-      .filter((line) => line.trim().length > 0)
-      .map((line, index) => parseOffer(line, index + 1));
+    for await (const line of lines) {
+      lineNumber++;
+
+      if (line.trim().length === 0) {
+        continue;
+      }
+
+      parseOffer(line, lineNumber);
+      importedCount++;
+    }
+
+    return importedCount;
   }
 }

@@ -2,6 +2,7 @@
 
 import chalk from 'chalk';
 import {CliApplication} from './cli/cli-application.js';
+import {GenerateCommand} from './cli/generate.command.js';
 import {HelpCommand} from './cli/help.command.js';
 import {ImportCommand} from './cli/import.command.js';
 import {VersionCommand} from './cli/version.command.js';
@@ -10,6 +11,7 @@ const cliApplication = new CliApplication([
   new HelpCommand(),
   new VersionCommand(),
   new ImportCommand(),
+  new GenerateCommand(),
 ]);
 
 try {
