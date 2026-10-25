@@ -38,6 +38,16 @@ npm run mock:server
 
 Запускает JSON Server с заготовками тестовых данных по адресу `http://localhost:3123/data`.
 
+#### Запустить MongoDB
+
+```bash
+docker compose up -d
+```
+
+MongoDB будет доступна на порту `27017`, а интерфейс mongo-express — по адресу
+`http://localhost:8081`. Строка подключения для импорта:
+`mongodb://admin:test@localhost:27017/six-cities?authSource=admin`.
+
 #### Скомпилировать проект
 
 ```bash

@@ -9,7 +9,7 @@ const HELP_MESSAGE = `
 Команды:
   --help                      Печатает этот текст
   --version                   Выводит номер версии
-  --import <filepath>         Импортирует данные из TSV
+  --import <path> <db-uri>    Импортирует данные из TSV в MongoDB
   --generate <n> <path> <url> Генерирует тестовые данные в формате TSV
 `;
 
