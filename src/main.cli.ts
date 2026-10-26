@@ -1,16 +1,21 @@
 #!/usr/bin/env node
 
 import chalk from 'chalk';
+import 'reflect-metadata';
 import {CliApplication} from './cli/cli-application.js';
 import {GenerateCommand} from './cli/generate.command.js';
 import {HelpCommand} from './cli/help.command.js';
 import {ImportCommand} from './cli/import.command.js';
 import {VersionCommand} from './cli/version.command.js';
+import {createContainer} from './container.js';
+import {Component} from './shared/types/component.js';
+
+const container = createContainer();
 
 const cliApplication = new CliApplication([
   new HelpCommand(),
   new VersionCommand(),
-  new ImportCommand(),
+  container.get<ImportCommand>(Component.ImportCommand),
   new GenerateCommand(),
 ]);
 

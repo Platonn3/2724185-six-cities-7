@@ -140,7 +140,7 @@ function parseOffer(line: string, lineNumber: number): Offer {
 export class TsvFileReader {
   constructor(private readonly filepath: string) {}
 
-  public async read(): Promise<number> {
+  public async read(onOffer?: (offer: Offer) => Promise<void>): Promise<number> {
     const stream = createReadStream(this.filepath, {encoding: 'utf-8'});
     const lines = createInterface({input: stream, crlfDelay: Infinity});
     let importedCount = 0;
@@ -153,7 +153,8 @@ export class TsvFileReader {
         continue;
       }
 
-      parseOffer(line, lineNumber);
+      const offer = parseOffer(line, lineNumber);
+      await onOffer?.(offer);
       importedCount++;
     }
 
