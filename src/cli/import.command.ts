@@ -13,11 +13,8 @@ export class ImportCommand implements Command {
     }
 
     const fileReader = new TsvFileReader(filepath);
-    const offers = await fileReader.read();
+    const importedCount = await fileReader.read();
 
-    console.info(chalk.bold.green(`Импортировано предложений: ${offers.length}`));
-    offers.forEach(({title, city}, index) => {
-      console.info(chalk.yellow(`${index + 1}. ${title} (${city.name})`));
-    });
+    console.info(chalk.bold.green(`Импортировано предложений: ${importedCount}`));
   }
 }

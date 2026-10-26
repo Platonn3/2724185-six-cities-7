@@ -10,6 +10,7 @@ const HELP_MESSAGE = `
   --help                      Печатает этот текст
   --version                   Выводит номер версии
   --import <filepath>         Импортирует данные из TSV
+  --generate <n> <path> <url> Генерирует тестовые данные в формате TSV
 `;
 
 export class HelpCommand implements Command {
